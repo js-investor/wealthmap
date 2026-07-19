@@ -578,7 +578,7 @@
     </div>
   </div>
   <div class="rv">
-    <form id="leadForm" action="subscribe.php" method="POST">
+    <form id="leadForm" action="/api/subscribe" method="POST">
       <label class="fl" for="fn">Krstné meno</label>
       <input type="text" id="fn" name="meno" required autocomplete="given-name" placeholder="Ivan">
       <label class="fl" for="fe">Email, kam ti pošlem appku</label>
@@ -654,7 +654,7 @@ f.addEventListener('submit',async e=>{
   e.preventDefault();
   const btn=f.querySelector('.sbtn');btn.disabled=true;btn.textContent='Posielam…';
   try{
-    const res=await fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}});
+    const res=await fetch(f.action,{method:'POST',body:new URLSearchParams(new FormData(f)),headers:{'Accept':'application/json'}});
     if(res.ok){f.style.display='none';document.getElementById('succ').style.display='block';}
     else{btn.disabled=false;btn.textContent='Poslať mi appku zadarmo →';alert('Niečo sa pokazilo. Skús to ešte raz.');}
   }catch(err){btn.disabled=false;btn.textContent='Poslať mi appku zadarmo →';alert('Niečo sa pokazilo. Skús to ešte raz.');}
