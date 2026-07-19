@@ -1,0 +1,6 @@
+# Tajné údaje (Ecomail API kľúč) — nahráva sa na hosting ručne
+config.php
+
+# Lokálne nástroje / systém
+.claude/
+.DS_Store
