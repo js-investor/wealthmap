@@ -18,8 +18,8 @@
     --ds:'Calvino',Georgia,serif; --bs:'Matter',system-ui,sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--ink);font-family:var(--bs);-webkit-font-smoothing:antialiased;line-height:1.55;overflow-x:hidden}
+  html{scroll-behavior:smooth;overflow-x:hidden;overflow-x:clip}
+  body{background:var(--bg);color:var(--ink);font-family:var(--bs);-webkit-font-smoothing:antialiased;line-height:1.55;overflow-x:hidden;overflow-x:clip}
   .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
   a{color:inherit}
 
@@ -27,7 +27,7 @@
   .rv.in{opacity:1;transform:none}
   @media(max-width:640px){
     .wrap{padding:0 20px}
-    .nv{padding:12px 0}
+    .nv{padding:12px 14px}
     .logo{font-size:15.5px}
     .logo img{height:24px!important;vertical-align:-6px!important;margin-right:7px!important}
     .nbtn{font-size:11.5px;padding:9px 14px}
@@ -214,7 +214,7 @@
   .black .sh em{color:#FFD98A}
   .black .shs{color:rgba(245,237,224,.6)}
   .bgrid{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(24px,5vw,70px);align-items:center;margin-top:clamp(32px,5vw,56px)}
-  @media(max-width:840px){.bgrid{grid-template-columns:1fr}}
+  @media(max-width:840px){.bgrid{grid-template-columns:1fr}.goalsband .bgrid{grid-template-columns:1fr}.gmt small{display:block}}
   .chip{background:rgba(245,237,224,.05);border:1px solid rgba(245,237,224,.12);border-radius:16px;padding:18px 20px;margin-bottom:14px;font-size:14px;font-weight:600;line-height:1.6}
   .chip b{color:#FFD98A}
   .chip .ce{margin-right:10px}
