@@ -1,0 +1,149 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "ui_kits/landing/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Fraunces|Matter))/i]",
+        "message": "Font not provided by the design system. Available: Fraunces, Matter."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {},
+    "tokens": [
+      "--black",
+      "--card-dark",
+      "--cream",
+      "--cream-deep",
+      "--dur",
+      "--ease",
+      "--fg1",
+      "--fg2",
+      "--fg3",
+      "--fraunces-display",
+      "--fraunces-text",
+      "--green",
+      "--green-deep",
+      "--green-tint",
+      "--hairline",
+      "--hairline-dark",
+      "--ink",
+      "--on-dark-1",
+      "--on-dark-2",
+      "--on-dark-3",
+      "--r-lg",
+      "--r-md",
+      "--r-pill",
+      "--r-sm",
+      "--r-xl",
+      "--r-xs",
+      "--red",
+      "--s-1",
+      "--s-2",
+      "--s-3",
+      "--s-4",
+      "--s-5",
+      "--s-6",
+      "--s-7",
+      "--s-8",
+      "--s-9",
+      "--sans",
+      "--serif",
+      "--serif-alt",
+      "--shadow-lg",
+      "--shadow-md",
+      "--shadow-sm",
+      "--white"
+    ],
+    "tokenKinds": {
+      "--black": "color",
+      "--ink": "color",
+      "--cream": "color",
+      "--cream-deep": "color",
+      "--white": "color",
+      "--green": "color",
+      "--green-deep": "color",
+      "--green-tint": "color",
+      "--red": "color",
+      "--fg1": "color",
+      "--fg2": "color",
+      "--fg3": "color",
+      "--hairline": "color",
+      "--on-dark-1": "color",
+      "--on-dark-2": "color",
+      "--on-dark-3": "color",
+      "--hairline-dark": "color",
+      "--card-dark": "color",
+      "--serif": "other",
+      "--serif-alt": "other",
+      "--sans": "other",
+      "--fraunces-display": "other",
+      "--fraunces-text": "font",
+      "--r-xs": "spacing",
+      "--r-sm": "spacing",
+      "--r-md": "spacing",
+      "--r-lg": "spacing",
+      "--r-xl": "spacing",
+      "--r-pill": "spacing",
+      "--s-1": "spacing",
+      "--s-2": "spacing",
+      "--s-3": "spacing",
+      "--s-4": "spacing",
+      "--s-5": "spacing",
+      "--s-6": "spacing",
+      "--s-7": "spacing",
+      "--s-8": "spacing",
+      "--s-9": "spacing",
+      "--shadow-sm": "shadow",
+      "--shadow-md": "shadow",
+      "--shadow-lg": "shadow",
+      "--ease": "other",
+      "--dur": "other"
+    },
+    "fontFamilies": [
+      "Fraunces",
+      "Matter"
+    ]
+  }
+}

@@ -1,0 +1,163 @@
+/* ============================================================
+   JS Mentor — Colors & Type Foundations
+   Brand: Slovak personal-finance & mindset community by Ivan
+   Load this file, then use the CSS vars below.
+   ============================================================ */
+
+/* ---------- FONTS ---------- */
+/* Fraunces — primary display serif (headings). Warm, modern, soft serif.
+   Variable: wght 100–900 + opsz / SOFT / WONK axes. Use .serif or the
+   --serif var; for big display set font-variation-settings (see below).
+   Recoleta is retained as a fallback display serif in fonts/ but is no
+   longer the brand heading face. */
+@font-face {
+  font-family: "Fraunces";
+  src: url("fonts/Fraunces-Variable.ttf") format("truetype");
+  font-weight: 100 900; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Fraunces";
+  src: url("fonts/Fraunces-Italic-Variable.ttf") format("truetype");
+  font-weight: 100 900; font-style: italic; font-display: swap;
+}
+
+@font-face {
+  font-family: "Matter";
+  src: url("fonts/Matter-Light.ttf") format("truetype");
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Matter";
+  src: url("fonts/Matter-Regular.ttf") format("truetype");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Matter";
+  src: url("fonts/Matter-Medium.ttf") format("truetype");
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Matter";
+  src: url("fonts/Matter-SemiBold.ttf") format("truetype");
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Matter";
+  src: url("fonts/Matter-Bold.ttf") format("truetype");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+
+:root {
+  /* ---------- CORE PALETTE ---------- */
+  --black:        #000000;  /* primary base — full-bleed dark sections */
+  --ink:          #161310;  /* near-black text on cream (softer than pure black) */
+  --cream:        #F5EDE0;  /* light section background */
+  --cream-deep:   #ECE2D1;  /* recessed beige — stat pills, wells on cream */
+  --white:        #FFFFFF;  /* cards */
+  --green:        #2B6B4A;  /* CTA / accent — forest green */
+  --green-deep:   #225A3E;  /* CTA hover / pressed */
+  --green-tint:   #E4EDE7;  /* faint green wash */
+  --red:          #B23A2E;  /* attention badge / "myth" pill */
+
+  /* ---------- FOREGROUND on CREAM/WHITE ---------- */
+  --fg1:          var(--ink);             /* primary text */
+  --fg2:          #4A453E;                /* secondary / supporting copy */
+  --fg3:          #847C70;                /* muted / captions / meta */
+  --hairline:     rgba(22,19,16,0.10);    /* borders on light */
+
+  /* ---------- FOREGROUND on BLACK ---------- */
+  --on-dark-1:    #F5EDE0;                /* primary text on black (cream, not pure white) */
+  --on-dark-2:    rgba(245,237,224,0.72); /* secondary on black */
+  --on-dark-3:    rgba(245,237,224,0.50); /* muted on black */
+  --hairline-dark:rgba(245,237,224,0.14); /* borders on dark */
+  --card-dark:    #161310;                /* raised card on black */
+
+  /* ---------- TYPE FAMILIES ---------- */
+  --serif:  "Fraunces", "Recoleta", "Georgia", serif;   /* display / headings */
+  --serif-alt: "Fraunces", "Recoleta", serif;           /* (legacy alias) */
+  --sans:   "Matter", "Helvetica Neue", Arial, sans-serif; /* body / UI */
+
+  /* Fraunces axes — apply per display size for warmth + optical balance */
+  --fraunces-display: "opsz" 144, "SOFT" 45, "WONK" 0;  /* big headlines */
+  --fraunces-text:    "opsz" 32,  "SOFT" 25, "WONK" 0;  /* small serif / labels */
+
+  /* ---------- RADII ---------- */
+  --r-xs:   8px;
+  --r-sm:   12px;
+  --r-md:   16px;   /* default card / button */
+  --r-lg:   22px;   /* large cards, media */
+  --r-xl:   28px;   /* hero panels */
+  --r-pill: 999px;
+
+  /* ---------- SPACING (8pt base) ---------- */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px;
+  --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 64px; --s-9: 96px;
+
+  /* ---------- SHADOWS ---------- */
+  --shadow-sm: 0 1px 2px rgba(22,19,16,0.05);
+  --shadow-md: 0 4px 16px rgba(22,19,16,0.07);
+  --shadow-lg: 0 18px 48px rgba(22,19,16,0.12);
+
+  /* ---------- MOTION ---------- */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur:  220ms;
+}
+
+/* ============================================================
+   SEMANTIC TYPE — apply these classes or copy the rules.
+   Headings = Recoleta. Body/UI = Matter.
+   Slovak diacritics fully supported by both faces.
+   ============================================================ */
+
+.t-display {            /* hero headline */
+  font-family: var(--serif); font-weight: 800;
+  font-variation-settings: var(--fraunces-display);
+  font-size: clamp(34px, 5vw, 56px); line-height: 1.05;
+  letter-spacing: -0.01em; color: var(--fg1); text-wrap: balance;
+}
+.t-h1 {
+  font-family: var(--serif); font-weight: 800;
+  font-variation-settings: var(--fraunces-display);
+  font-size: clamp(28px, 3.4vw, 40px); line-height: 1.12;
+  letter-spacing: -0.01em; color: var(--fg1); text-wrap: balance;
+}
+.t-h2 {
+  font-family: var(--serif); font-weight: 600;
+  font-variation-settings: var(--fraunces-display);
+  font-size: 26px; line-height: 1.18; color: var(--fg1);
+}
+.t-h3 {
+  font-family: var(--serif); font-weight: 600;
+  font-variation-settings: var(--fraunces-display);
+  font-size: 20px; line-height: 1.25; color: var(--fg1);
+}
+.t-lead {               /* sub-headline / standfirst, often semibold sans */
+  font-family: var(--sans); font-weight: 600;
+  font-size: 19px; line-height: 1.45; color: var(--fg1);
+}
+.t-body {
+  font-family: var(--sans); font-weight: 400;
+  font-size: 16px; line-height: 1.6; color: var(--fg2);
+}
+.t-body-sm {
+  font-family: var(--sans); font-weight: 400;
+  font-size: 14px; line-height: 1.55; color: var(--fg2);
+}
+.t-label {              /* eyebrow / pill text — uppercase */
+  font-family: var(--sans); font-weight: 600;
+  font-size: 12px; line-height: 1; letter-spacing: 0.04em; color: var(--fg1);
+}
+.t-stat {               /* big numbers in stat rows */
+  font-family: var(--serif); font-weight: 800;
+  font-variation-settings: var(--fraunces-display);
+  font-size: 30px; line-height: 1; color: var(--fg1);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.t-mono {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 13px; line-height: 1.5;
+}
+
+/* Inline emphasis pattern used heavily in JS Mentor headlines:
+   bold lead-in inside an otherwise regular-weight serif sentence. */
+.t-display b, .t-h1 b, .t-h2 b { font-weight: 800; }
